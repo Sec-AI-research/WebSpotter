@@ -16,7 +16,7 @@ from classification.utils import load_model
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--model_path',type=str, required=True)
-parser.add_argument('--dataset', type=str, required=True, choices=['csic','pkdd','fpad','cve'])
+parser.add_argument('--dataset', type=str, required=True, choices=['csic','pkdd','fpad','fpad-ood','cve'])
 parser.add_argument('--test_path', type=str, required=True)
 parser.add_argument('--outputdir', type=str, required=True, help="Directory to store output files")
 parser.add_argument("--token", default="char", type=str, help="one of [char, word]")
@@ -36,6 +36,8 @@ mean_weight = args.mean_weight
 stv_weight = args.stv_weight
 token_aggretion_method = args.token_aggretion_method
 token = args.token
+if dataset_type == 'fpad-ood':
+    dataset_type = 'fpad'
 
 device = torch.device("cuda:{}".format(args.gpu))
 
