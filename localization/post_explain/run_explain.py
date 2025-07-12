@@ -25,7 +25,7 @@ parser.add_argument('--mean_weight', type=float, default=1.0)
 parser.add_argument('--stv_weight', type=float, default=1.0)
 parser.add_argument('--token_aggretion_method', type=str, default='abs_dot', choices=['abs_dot','sum','abs_sum'])
 parser.add_argument("--gpu", default="0", type=str)
-parser.add_argument("--seed", default=0, type=int)
+parser.add_argument("--seed", default=42, type=int)
 
 args = parser.parse_args()
 dataset_type = args.dataset

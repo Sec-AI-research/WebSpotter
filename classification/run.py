@@ -35,7 +35,7 @@ parser.add_argument("--decay_ratio", default=1.0, type=float, help="Decay ratio 
 parser.add_argument("--decay_step", default=1, type=int, help="Step size for the learning rate scheduler")
 parser.add_argument("--model", default='textcnn', type=str, help="Model to use, we use textcnn")
 parser.add_argument("--use_tb", action="store_true", help="Flag to use tensorboard for logging") 
-parser.add_argument("--seed", default=0, type=int)
+parser.add_argument("--seed", default=42, type=int)
 parser.add_argument("--explain_flag", default=True, help="Flag to use explanation-based tokenization (alignment with HTTP structure)")
 parser.add_argument("--poison_ratio", default=0.0, type=float, help="Proportion of the data to be label-poisoned")
 parser.add_argument("--train_path", default="train.jsonl", type=str, help="Path to the training dataset")
