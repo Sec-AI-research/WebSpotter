@@ -32,13 +32,13 @@ Then, compute the importance scores of minimal semantic units (MSUs), which are 
 
 ```
 python localization/post_explain/run_explain.py \
-    --model_path tmp_model/textcnn-700-FPAD-512-None-0.pth \
+    --model_path tmp_model/textcnn-700-FPAD-512-None-42.pth \
     --outputdir post_explain_result/fpad/test \
     --dataset fpad \
     --test_path datasets/FPAD/test.jsonl
 
 python localization/post_explain/run_explain.py \
-    --model_path tmp_model/textcnn-700-FPAD-512-None-0.pth \
+    --model_path tmp_model/textcnn-700-FPAD-512-None-42.pth \
     --outputdir post_explain_result/fpad/train \
     --dataset fpad \
     --test_path datasets/FPAD/train.jsonl
