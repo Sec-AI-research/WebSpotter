@@ -109,7 +109,7 @@ python localization/binary_based/run.py \
 Expected metrics for FPAD-OOD dataset include Precision > 0.96, Recall > 0.96, and F1-score > 0.96.
 
 ## Customization
-The above experiments are conducted using the FPAD dataset. To switch to other dataset, evaluators can modify the corresponding command-line arguments, such as `--dataset`, `--train_path`, and `--test_path`, along with the relevant file or directory paths. Also, the proportion of location-labeled training data used for the localization model can be adjusted via the `--sample_rate` argument.
+The above experiments are conducted using the FPAD dataset. To switch to other dataset, evaluators can modify the corresponding command-line arguments, such as `--dataset`, `--train_path`, and `--test_path`, along with the relevant file or directory paths. Also, the proportion of location-labeled training data used for the localization model can be adjusted via the `--sample_rate` argument. Additionally, results may slightly differ from those reported in the paper, because we run each experiment three times with varying random seeds and report average results.
 
 
 
