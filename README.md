@@ -33,6 +33,7 @@ The first step is to train a detection model. A TextCNN model is used for this p
 ```
 python classification/run.py --tmp_dir datasets/FPAD --tmp_model tmp_model --dataset fpad
 ```
+Expected metrics for FPAD dataset include Precision > 0.98, Recall > 0.98, and F1-score > 0.98.
 
 #### Compute Importance Scores for MSUs
 
