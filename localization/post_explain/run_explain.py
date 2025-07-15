@@ -39,7 +39,7 @@ token = args.token
 if dataset_type == 'fpad-ood':
     dataset_type = 'fpad'
 
-device = torch.device("cuda:{}".format(args.gpu))
+device = torch.device("cuda:{}".format(args.gpu) if torch.cuda.is_available() else "cpu")
 
 def set_seed(seed):
     torch.manual_seed(seed)
