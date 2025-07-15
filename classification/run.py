@@ -24,7 +24,7 @@ parser.add_argument("--batch_size", default=64, type=int, help="Batch size for t
 parser.add_argument("--num_epochs", default=10, type=int, help="Number of epochs for training")
 parser.add_argument("--lr", default=0.001, type=float, help="Learning rate for the optimizer")
 parser.add_argument("--num_workers", default=2, type=int)
-parser.add_argument("--max_len", default=700, type=int, help="Maximum sequence length for padding. For character-level tokenization, 2100 is recommended for the PKDD dataset because it includes headers, while 700 is recommended for other datasets.")
+parser.add_argument("--max_len", type=int, help="Maximum sequence length for padding. For character-level tokenization, 2100 is recommended for the PKDD dataset because it includes headers, while 700 is recommended for other datasets.")
 parser.add_argument("--emb_dim", default=512, type=int, help="Dimensionality of the embeddings")
 parser.add_argument("--dropout", default=None, type=float, help="Dropout rate for the model")
 parser.add_argument("--gpu", default="0", type=str)
@@ -44,10 +44,13 @@ parser.add_argument("--test_path", default="test.jsonl", type=str, help="Path to
 # Parse arguments
 args = parser.parse_args()
 
-if args.dataset == "pkdd":
-    args.max_len = 2100
-else:
-    args.max_len = 700
+if args.max_len is None:
+    if args.dataset == "pkdd":
+        args.max_len = 2100
+    else:
+        args.max_len = 700
+
+print(f"Using max_len = {args.max_len} for dataset {args.dataset}")
 
 if args.use_tb:
     writer, hyperpara_dict = init_tensorboard(args)
