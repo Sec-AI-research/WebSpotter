@@ -51,6 +51,8 @@ python localization/post_explain/run_explain.py \
     --dataset fpad \
     --test_path datasets/FPAD/train.jsonl
 ```
+Expected metrics for FPAD dataset include Precision > 0.98, Recall > 0.99, and F1-score > 0.98.
+
 
 #### Train the Localization Model and Evaluate
 
@@ -79,6 +81,7 @@ python localization/binary_based/run.py \
     --output_path binary_result/fpad \
     --sample_rate 0.5
 ```
+Expected metrics for above example include Precision > 0.99, Recall > 0.99, and F1-score > 0.99.
 
 ### Experiment 3: Localization Performance of WebSpotter on Unseen Attacks
 
@@ -103,6 +106,10 @@ python localization/binary_based/run.py \
     --output_path binary_result/fpad_ood \
     --sample_rate 0.01
 ```
+Expected metrics for FPAD-OOD dataset include Precision > 0.96, Recall > 0.97, and F1-score > 0.96.
+
+## Customization
+The above experiments are conducted using the FPAD dataset. To switch to other dataset, evaluators can modify the corresponding command-line arguments, such as `--dataset`, `--train_path`, and `--test_path`, along with the relevant file or directory paths. Also, the proportion of location-labeled training data used for the localization model can be adjusted via the `--sample_rate` argument.
 
 
 
