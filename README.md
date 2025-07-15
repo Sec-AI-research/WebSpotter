@@ -66,7 +66,7 @@ python localization/binary_based/run.py \
     --output_path binary_result/fpad \
     --sample_rate 0.01
 ```
-Expected metrics for FPAD dataset include Precision > 0.98, Recall > 0.99, and F1-score > 0.98.
+Expected metrics for FPAD dataset include Precision > 0.98, Recall > 0.98, and F1-score > 0.98.
 
 ### Experiment 2: Localization Performance of WebSpotter under Varying Labeling Overhead
 You can reuse the trained detection model and MSU importance scores from Experiment 1. To test performance under different labeling overhead, adjust the `--sample_rate` argument (e.g., 0.01, 0.1, 0.5, 1.0).
