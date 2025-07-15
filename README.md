@@ -33,7 +33,6 @@ The first step is to train a detection model. A TextCNN model is used for this p
 ```
 python classification/run.py --tmp_dir datasets/FPAD --tmp_model tmp_model --dataset fpad
 ```
-Expected metrics for FPAD dataset include Precision > 0.98, Recall > 0.98, and F1-score > 0.98.
 
 #### Compute Importance Scores for MSUs
 
@@ -52,7 +51,6 @@ python localization/post_explain/run_explain.py \
     --dataset fpad \
     --test_path datasets/FPAD/train.jsonl
 ```
-Expected metrics for FPAD dataset include Precision > 0.98, Recall > 0.99, and F1-score > 0.98.
 
 
 #### Train the Localization Model and Evaluate
@@ -68,6 +66,7 @@ python localization/binary_based/run.py \
     --output_path binary_result/fpad \
     --sample_rate 0.01
 ```
+Expected metrics for FPAD dataset include Precision > 0.98, Recall > 0.99, and F1-score > 0.98.
 
 ### Experiment 2: Localization Performance of WebSpotter under Varying Labeling Overhead
 You can reuse the trained detection model and MSU importance scores from Experiment 1. To test performance under different labeling overhead, adjust the `--sample_rate` argument (e.g., 0.01, 0.1, 0.5, 1.0).
