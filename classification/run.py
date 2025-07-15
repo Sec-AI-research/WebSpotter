@@ -44,6 +44,11 @@ parser.add_argument("--test_path", default="test.jsonl", type=str, help="Path to
 # Parse arguments
 args = parser.parse_args()
 
+if args.dataset == "pkdd":
+    args.max_len = 2100
+else:
+    args.max_len = 700
+
 if args.use_tb:
     writer, hyperpara_dict = init_tensorboard(args)
 else:
