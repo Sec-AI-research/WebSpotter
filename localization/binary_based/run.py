@@ -38,7 +38,7 @@ feature_method = args.feature_method
 K = args.k
 sample_rate = args.sample_rate
 cls_model = args.cls_model
-ddevice = f'cuda:{args.gpu}' if torch.cuda.is_available() else 'cpu'
+device = f'cuda:{args.gpu}' if torch.cuda.is_available() else 'cpu'
 poison_ratio = args.poison_ratio  # Capture poison ratio from command line
 
 if feature_method in ['textemb', 'score_sort_with_textemb']:
