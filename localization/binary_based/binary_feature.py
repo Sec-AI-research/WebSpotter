@@ -148,7 +148,7 @@ def get_binary_dataset_plus(dataset, data_json, dataset_name, tokenizer, feature
                 reverse=True
             )
             # Check if the difference between the top two scores exceeds the threshold
-            if len(scores) > 1 and (scores[0]  >= scores[1]*2):
+            if len(scores) > 1 and (scores[0]  >= scores[1]*3):
                 indices_threshold.append(index)
 
     # Randomly sample indices based on the filtered results and required sample size
